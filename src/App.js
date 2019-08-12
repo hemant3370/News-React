@@ -27,10 +27,10 @@ class App extends Component {
       >
        {categories.map((cat, index) => {
           return (
-            <SubMenu key={cat} title={cat}>
+            <SubMenu key={cat+index} title={cat}>
           {Object.keys(channels[index]).map(channel => {
   return (
-    <Menu.Item key={channel} onClick={() => { this.setState({url: Object.values(channels)[index][channel] })}}>{channel}</Menu.Item>
+    <Menu.Item key={cat+channel} onClick={() => { this.setState({url: Object.values(channels)[index][channel] })}}>{channel}</Menu.Item>
   );
 })}
         </SubMenu>
