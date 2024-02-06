@@ -27,7 +27,7 @@ class FeedList extends Component {
     self.setState({ feed: [], loading: true });
     const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
     let parser = new RSSParser();
-    parser.parseURL(CORS_PROXY + url, function(err, rssfeed) {
+    parser.parseURL(url, function(err, rssfeed) {
      if (rssfeed !== undefined) {
        console.log("Feed", rssfeed);
         self.setState({ feed: rssfeed.items, loading: false });
