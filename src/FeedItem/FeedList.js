@@ -25,7 +25,7 @@ class FeedList extends Component {
   fetchFeed(url){
     let self = this;
     self.setState({ feed: [], loading: true });
-    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+    const CORS_PROXY = "https://getrssfeed-mm5zus754q-uc.a.run.app?url="
     let parser = new RSSParser();
     parser.parseURL(url, function(err, rssfeed) {
      if (rssfeed !== undefined) {
