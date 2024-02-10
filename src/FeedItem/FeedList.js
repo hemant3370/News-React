@@ -27,7 +27,7 @@ class FeedList extends Component {
     self.setState({ feed: [], loading: true });
     const CORS_PROXY = "https://getrssfeed-mm5zus754q-uc.a.run.app?url="
     let parser = new RSSParser();
-    parser.parseURL(url, function(err, rssfeed) {
+    parser.parseURL(CORS_PROXY + url, function(err, rssfeed) {
      if (rssfeed !== undefined) {
        console.log("Feed", rssfeed);
         self.setState({ feed: rssfeed.items, loading: false });
